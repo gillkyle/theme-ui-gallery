@@ -1,3 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { Container } from "@theme-ui/components"
 
-export default () => <div>Hello world!</div>
+export default () => <Container>Heading</Container>
