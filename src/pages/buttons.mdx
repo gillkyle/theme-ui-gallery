@@ -14,13 +14,48 @@ This button:
 
 <LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button>Primary</Button>`}</LiveCode>
 
-Is the same as this:
+Is the same as this with a theme file containing this variant defined:
+
+```
+theme: {
+  buttons: {
+    primary: {
+      color: "background",
+      bg: "primary",
+    },
+  }
+}
+```
 
 <LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button variant="buttons.primary">Primary</Button>`}</LiveCode>
 
 ### Using other variants
 
 You can use other variants that are defined by referencing them explicitly:
+
+```
+theme: {
+  buttons: {
+    primary: {
+      ...
+    },
+    secondary: {
+      variant: "buttons.primary",
+      color: "background",
+      bg: "secondary",
+    },
+    ghost: {
+      color: "text",
+      bg: alpha("primary", 0.1),
+      "&:hover": {
+        bg: alpha("primary", 0.2),
+      },
+    },
+  }
+}
+```
+
+With the above theme configuration you can then reference them:
 
 <LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button variant="buttons.secondary">Secondary</Button>
 <Button variant="buttons.ghost">Ghost</Button>`}</LiveCode>
@@ -76,4 +111,9 @@ SVG elements can be used inside other elements and styled with the `sx` prop as 
   Download
 </Button>`}</LiveCode>
 
+### Elevated Button
+
+<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button sx={{ bg: 'white', color: 'text', borderWidth: '1px', borderStyle: 'solid', borderColor: '#d0d0d0', boxShadow: '0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)' }}>
+  Primary
+</Button>`}</LiveCode>
 

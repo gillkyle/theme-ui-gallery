@@ -136,52 +136,77 @@ export default ({ children }) => {
           <Box sx={{ p: `3`, bg: `soft` }}>{children}</Box>
           <Box
             sx={{
-              p: `3`,
+              position: `relative`,
               borderLeft: theme => `1px solid ${theme.colors.border}`,
+              height: `calc(100vh - 64px)`,
             }}
           >
-            <Heading>Theme Editor</Heading>
-            <Editor
-              fontSize={12}
+            <Box
               sx={{
-                "& * > label": {
-                  color: `grays.6`,
-                },
-                "& * > input": {
-                  color: `text`,
-                },
-                "& *": {
-                  borderRadius: `2`,
-                },
+                p: `3`,
+                height: `100%`,
+                overflowY: `scroll`,
               }}
             >
-              <StyledRow title="Fonts">
-                <Fonts
-                  sx={{ borderRadius: `2`, variant: "@theme-ui/editor.select" }}
+              <Heading>Theme Editor</Heading>
+              <Editor
+                fontSize={12}
+                sx={{
+                  "& * > label": {
+                    color: `grays.6`,
+                  },
+                  "& * > input": {
+                    color: `text`,
+                  },
+                  "& *": {
+                    borderRadius: `2`,
+                  },
+                }}
+              >
+                <StyledRow title="Fonts">
+                  <Fonts
+                    sx={{
+                      borderRadius: `2`,
+                      variant: "@theme-ui/editor.select",
+                    }}
+                  />
+                </StyledRow>
+                <StyledRow title="Font Sizes">
+                  <FontSizes />
+                </StyledRow>
+                <StyledRow title="Font Weights">
+                  <FontWeights />
+                </StyledRow>
+                <StyledRow title="Line Heights">
+                  <LineHeights />
+                </StyledRow>
+                <Row sx={{ mt: `3`, mb: `1` }}>
+                  <b sx={{ fontSize: `2`, letterSpacing: 1 }}>Colors</b>
+                </Row>
+                <ColorMode />
+                <ColorPalette
+                  size={32}
+                  label={false}
+                  sx={{ border: theme => `1px solid ${theme.colors.border}` }}
                 />
-              </StyledRow>
-              <StyledRow title="Font Sizes">
-                <FontSizes />
-              </StyledRow>
-              <StyledRow title="Font Weights">
-                <FontWeights />
-              </StyledRow>
-              <StyledRow title="Line Heights">
-                <LineHeights />
-              </StyledRow>
-              <Row sx={{ mt: `3`, mb: `1` }}>
-                <b sx={{ fontSize: `2`, letterSpacing: 1 }}>Colors</b>
-              </Row>
-              <ColorMode />
-              <ColorPalette
-                size={32}
-                label={false}
-                sx={{ border: theme => `1px solid ${theme.colors.border}` }}
-              />
-              <StyledRow title="Space">
-                <Space />
-              </StyledRow>
-            </Editor>
+                <StyledRow title="Space">
+                  <Space />
+                </StyledRow>
+              </Editor>
+            </Box>
+            <Box
+              sx={{
+                position: `absolute`,
+                p: `3`,
+                bg: `background`,
+                borderTop: theme => `1px solid ${theme.colors.border}`,
+                bottom: 0,
+                right: 0,
+                left: 0,
+              }}
+            >
+              Button
+            </Box>
           </Box>
         </div>
       </Flex>
