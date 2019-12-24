@@ -115,6 +115,7 @@ export default ({ children }) => {
             display: `grid`,
             gridTemplateColumns: `240px 3fr 2fr`,
             justifyContent: "space-between",
+            height: `100vh`,
           }}
         >
           <Box
@@ -123,13 +124,14 @@ export default ({ children }) => {
               borderRight: theme => `1px solid ${theme.colors.border}`,
               display: `flex`,
               flexDirection: `column`,
+              height: `100%`,
               "& *+*": {
                 mt: `1`,
               },
             }}
           >
             <NavLink to="buttons">Buttons</NavLink>
-            <NavLink to="buttons">Buttons</NavLink>
+            <NavLink to="navigation">Navigation</NavLink>
           </Box>
           <Box sx={{ p: `3`, bg: `soft` }}>{children}</Box>
           <Box

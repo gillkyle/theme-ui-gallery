@@ -14,8 +14,8 @@ const scope = {
   ...components,
 }
 
-const transformCode = src =>
-  `/** @jsx jsx */\n<div sx={{display: 'flex', justifyContent: 'space-around' }}>${src}</div>`
+const transformCode = (src, containerSx = ``) =>
+  `/** @jsx jsx */\n<div ${containerSx}>${src}</div>`
 
 // night owl theme taken from https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/themes/nightOwl.js
 const prismTheme = {
@@ -123,14 +123,14 @@ const prismTheme = {
   ],
 }
 
-export const LiveCode = ({ children, preview }) => {
+export const LiveCode = ({ children, preview, containerSx }) => {
   if (preview) {
     return (
       <LiveProvider
         theme={prismTheme}
         code={children}
         scope={scope}
-        transformCode={transformCode}
+        transformCode={src => transformCode(src, containerSx)}
       >
         <LivePreview />
       </LiveProvider>
@@ -142,7 +142,7 @@ export const LiveCode = ({ children, preview }) => {
       theme={prismTheme}
       code={children}
       scope={scope}
-      transformCode={transformCode}
+      transformCode={src => transformCode(src, containerSx)}
     >
       <div
         sx={{

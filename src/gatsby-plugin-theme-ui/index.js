@@ -1,6 +1,6 @@
 import prism from "@theme-ui/prism/presets/theme-ui"
-import { alpha } from "@theme-ui/color"
-import duotoneDark from "@theme-ui/prism/presets/duotone-dark.json"
+import { alpha, darken } from "@theme-ui/color"
+import nightOwl from "@theme-ui/prism/presets/night-owl.json"
 
 export default {
   useCustomProperties: true,
@@ -171,6 +171,13 @@ export default {
       transitionTimingFunction: "ease-out",
       transitionDuration: ".2s",
       borderRadius: 2,
+      "&:hover": {
+        bg: "soft",
+      },
+      "&.active": {
+        color: "primary",
+        bg: "soft",
+      },
     },
   },
   cards: {
@@ -268,18 +275,22 @@ export default {
       overflow: "auto",
       code: {
         color: "inherit",
+        ...nightOwl,
       },
       variant: "prism",
     },
     code: {
       fontFamily: "monospace",
       fontSize: 1,
-      ...duotoneDark,
+      ...nightOwl,
+      bg: "grayPrimary",
     },
     inlineCode: {
       fontFamily: "monospace",
       color: "secondary",
-      bg: "graySecondary",
+      bg: darken("soft", 0.1),
+      borderRadius: `2`,
+      p: 1,
     },
     table: {
       width: "100%",

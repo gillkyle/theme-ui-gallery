@@ -1,0 +1,55 @@
+---
+title: Navigation
+---
+
+import { LiveCode } from "../components/code"
+
+### Simple Horizontal Navigation
+
+<LiveCode>
+  {`<Flex as="nav" sx={{ width: '100%' }}>
+  <NavLink href="#!" p={2}>
+    Home
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    Blog
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    About
+  </NavLink>
+</Flex>`}
+</LiveCode>
+
+## Vertical Navigation
+
+### Rounded Pills
+
+<LiveCode>
+  {`<Flex as="nav" sx={{ width: '50%', flexDirection: 'column' }}>
+  <NavLink href="#!" p={2}>
+    Home
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    Blog
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    About
+  </NavLink>
+</Flex>`}
+</LiveCode>
+
+### Right Border
+
+<LiveCode>
+  {`<Flex as="nav" sx={{ borderRight: '1px solid #d6d8d0', width: '50%', flexDirection: 'column' }}>
+  <NavLink href="#!" p={2}>
+    Home
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    Blog
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    About
+  </NavLink>
+</Flex>`}
+</LiveCode>
