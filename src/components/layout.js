@@ -130,6 +130,7 @@ export default ({ children }) => {
               },
             }}
           >
+            <NavLink to="alerts">Alerts</NavLink>
             <NavLink to="buttons">Buttons</NavLink>
             <NavLink to="navigation">Navigation</NavLink>
           </Box>

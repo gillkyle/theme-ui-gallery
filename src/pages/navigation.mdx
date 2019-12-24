@@ -4,7 +4,9 @@ title: Navigation
 
 import { LiveCode } from "../components/code"
 
-### Simple Horizontal Navigation
+## Horizontal Navigation
+
+### Simple
 
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '100%' }}>
@@ -20,35 +22,67 @@ import { LiveCode } from "../components/code"
 </Flex>`}
 </LiveCode>
 
+### Contained
+
+<LiveCode>
+  {`<Flex as="nav" sx={{ width: '100%' }}>
+  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderTopRightRadius: '0', borderBottomRightRadius: '0' }}>
+    Account
+  </NavLink>
+  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: '0' }}>
+    Notifications
+  </NavLink>
+  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderTopLeftRadius: '0', borderBottomLeftRadius: '0' }}>
+    Settings
+  </NavLink>
+</Flex>`}
+</LiveCode>
+
+### Contained Full-rounded
+
+<LiveCode>
+  {`<Flex as="nav" sx={{ width: '100%' }}>
+  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: 0,  borderTopLeftRadius: 50, borderBottomLeftRadius: 50  }}>
+    Account
+  </NavLink>
+  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: '0' }}>
+    Notifications
+  </NavLink>
+  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: 0, borderTopRightRadius: 50, borderBottomRightRadius: 50 }}>
+    Settings
+  </NavLink>
+</Flex>`}
+</LiveCode>
+
 ## Vertical Navigation
 
 ### Rounded Pills
 
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '50%', flexDirection: 'column' }}>
-  <NavLink href="#!" p={2}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '2'}}>
     Home
   </NavLink>
-  <NavLink href="#!" p={2}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '2'}}>
     Blog
   </NavLink>
-  <NavLink href="#!" p={2}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '2'}}>
     About
   </NavLink>
 </Flex>`}
 </LiveCode>
 
-### Right Border
+### Square Pills
 
 <LiveCode>
-  {`<Flex as="nav" sx={{ borderRight: '1px solid #d6d8d0', width: '50%', flexDirection: 'column' }}>
-  <NavLink href="#!" p={2}>
+  {`<Flex as="nav" sx={{ width: '50%', flexDirection: 'column' }}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '0'}}>
     Home
   </NavLink>
-  <NavLink href="#!" p={2}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '0'}}>
     Blog
   </NavLink>
-  <NavLink href="#!" p={2}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '0'}}>
     About
   </NavLink>
 </Flex>`}

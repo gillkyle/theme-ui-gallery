@@ -1,0 +1,23 @@
+---
+title: Alerts
+--- 
+
+import { LiveCode } from "../components/code"
+
+### Simple
+
+<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert>
+  This is a notice <Close ml='auto' mr={-2} />
+</Alert>`}</LiveCode>
+
+### Full-rounded
+
+<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert sx={{ borderRadius: 50, py: '1'}}>
+  This is a notice <Close ml='auto' mr={-2} />
+</Alert>`}</LiveCode>
+
+### Rounded with Badge
+
+<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert sx={{ borderRadius: '3', py: '1'}}>
+  <Badge bg="secondary" mr={2} borderRadius="3px">New!</Badge>There's a big deal that ends soon! <Close ml='auto' mr={-2} />
+</Alert>`}</LiveCode>
