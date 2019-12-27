@@ -3,10 +3,11 @@ import { jsx, Styled, useColorMode } from "theme-ui"
 import React from "react"
 import { Link, parsePath } from "gatsby"
 import { Global } from "@emotion/core"
-import { Button, Flex, Box, Heading } from "@theme-ui/components"
+import { Button, Divider, Flex, Box, Heading } from "@theme-ui/components"
 import {
   FiAlertCircle,
   FiAirplay,
+  FiBookOpen,
   FiCompass,
   FiCopy,
   FiGithub,
@@ -177,6 +178,19 @@ export default ({ children }) => {
             <NavLink to="navigation">
               <FiCompass sx={{ mr: `1` }} />
               Navigation
+            </NavLink>
+            <Divider />
+            <NavLink
+              to="style-guide"
+              sx={{
+                fontSize: 1,
+                "&::before": {
+                  borderTop: `1px solid red`,
+                },
+              }}
+            >
+              <FiBookOpen sx={{ mr: `1` }} />
+              View Theme
             </NavLink>
           </Box>
           <Box
