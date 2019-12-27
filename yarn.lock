@@ -5084,6 +5084,14 @@ gatsby-telemetry@^1.1.44:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
+gatsby-theme-style-guide@^0.2.53:
+  version "0.2.53"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-style-guide/-/gatsby-theme-style-guide-0.2.53.tgz#f36d76b3fa5521cc465b5bc7cc275e097dd9a4d7"
+  integrity sha512-uNUS+tO9fxghs0h/iYuOyfJBdRUb2sbTPMxP6u59QzcxxesD3UHsvtgQ+y31cs42XHzLMH+gkRV4Xwzv2OTTRQ==
+  dependencies:
+    "@theme-ui/style-guide" "^0.2.53"
+    theme-ui "^0.2.52"
+
 gatsby@^2.18.12:
   version "2.18.12"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.18.12.tgz#caae4482aab2e30b75b30a0e96b7eb1dd21e6f42"

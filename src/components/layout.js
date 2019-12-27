@@ -4,7 +4,13 @@ import React from "react"
 import { Link, parsePath } from "gatsby"
 import { Global } from "@emotion/core"
 import { Button, Flex, Box, Heading } from "@theme-ui/components"
-import { FiAlertCircle, FiAirplay, FiCompass, FiGithub } from "react-icons/fi"
+import {
+  FiAlertCircle,
+  FiAirplay,
+  FiCompass,
+  FiCopy,
+  FiGithub,
+} from "react-icons/fi"
 import {
   Fonts,
   FontWeights,
@@ -122,13 +128,18 @@ export default ({ children }) => {
               Theme UI Gallery
             </Link>
           </Flex>
-          <Flex>
-            <a
-              sx={{ variant: `links.nav` }}
-              href="https://github.com/gillkyle/theme-ui-gallery"
-            >
-              <FiGithub />
-            </a>
+          <Flex
+            as={`a`}
+            sx={{
+              variant: `links.nav`,
+              width: `fit-content`,
+              display: `flex`,
+              alignItems: `center`,
+            }}
+            href="https://github.com/gillkyle/theme-ui-gallery"
+          >
+            Contribute
+            <FiGithub sx={{ ml: 1 }} />
           </Flex>
         </Flex>
         <div
@@ -158,6 +169,10 @@ export default ({ children }) => {
             <NavLink to="buttons">
               <FiAirplay sx={{ mr: `1` }} />
               Buttons
+            </NavLink>
+            <NavLink to="cards">
+              <FiCopy sx={{ mr: `1` }} />
+              Cards
             </NavLink>
             <NavLink to="navigation">
               <FiCompass sx={{ mr: `1` }} />

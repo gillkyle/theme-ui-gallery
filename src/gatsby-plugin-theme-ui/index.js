@@ -34,7 +34,8 @@ export default {
     // ],
     text: "#102A43", // neutrals.0
     background: "#ffffff",
-    soft: "#f2f5f9",
+    soft: "#f3f7f9",
+    border: "#EDF2F7",
     grayPrimary: "#9fa4a9", // neutrals.2
     graySecondary: "#aab3bb", // neutrals.6
     // neutrals: [
@@ -49,30 +50,15 @@ export default {
     //   "#D9E2EC",
     //   "#F0F4F8",
     // ],
-    border: "#EDF2F7",
     modes: {
       dark: {
         text: "#ffffff",
         background: "#060606",
-        primary: "#33ccff",
-        secondary: "#ee00ff",
-        gray: "#999999",
-        accent: "#cc00ff",
+        primary: "#71abe6",
+        secondary: "#dcb219",
         soft: "#121519",
         border: "#272727",
-        grayPrimary: "#c2d3e4",
-        graySecondary: "#969a9e",
-      },
-      deep: {
-        text: "hsl(210, 50%, 96%)",
-        background: "#101323",
-        primary: "hsl(260, 100%, 80%)",
-        secondary: "hsl(290, 100%, 80%)",
-        accent: "hsl(290, 100%, 80%)",
-        gray: "hsl(210, 50%, 60%)",
-        soft: "#1e202d",
-        border: "#554E68",
-        grayPrimary: "#c2d3e4",
+        grayPrimary: "#687b8e",
         graySecondary: "#969a9e",
       },
       swiss: {
@@ -80,12 +66,20 @@ export default {
         background: "#fffbf7",
         primary: "hsl(10, 80%, 50%)",
         secondary: "hsl(10, 60%, 50%)",
-        accent: "hsl(250, 60%, 30%)",
-        gray: "hsl(10, 20%, 50%)",
         soft: "#fdf9f3",
         border: "#FEF3D8",
-        grayPrimary: "#9fa4a9", // neutrals.2
+        grayPrimary: "#687b8e", // neutrals.2
         graySecondary: "#aab3bb", // neutrals.6
+      },
+      deep: {
+        text: "hsl(210, 50%, 96%)",
+        background: "#161617",
+        primary: "hsl(260, 100%, 80%)",
+        secondary: "hsl(290, 100%, 80%)",
+        soft: "#1e202d",
+        border: "#554E68",
+        grayPrimary: "#c2d3e4",
+        graySecondary: "#969a9e",
       },
     },
   },
@@ -132,6 +126,7 @@ export default {
       color: "background",
       bg: "primary",
       fontWeight: "bold",
+      cursor: "pointer",
     },
     secondary: {
       variant: "buttons.primary",

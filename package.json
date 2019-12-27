@@ -25,6 +25,7 @@
     "gatsby": "^2.18.12",
     "gatsby-plugin-mdx": "^1.0.64",
     "gatsby-plugin-theme-ui": "^0.2.53",
+    "gatsby-theme-style-guide": "^0.2.53",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^3.8.0",

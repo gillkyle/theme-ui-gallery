@@ -7,5 +7,6 @@ module.exports = {
         extensions: [".mdx", ".md"],
       },
     },
+    "gatsby-theme-style-guide",
   ],
 }

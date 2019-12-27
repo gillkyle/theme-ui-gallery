@@ -2,7 +2,7 @@
 title: Buttons
 ---
 
-import { Button } from "@theme-ui/components"
+import { Button, Flex } from "@theme-ui/components"
 import { LiveCode } from "../components/code"
 import Prism from "@theme-ui/prism"
 
@@ -10,112 +10,44 @@ import Prism from "@theme-ui/prism"
 
 Examples of combining `@theme-ui/components` to create and style buttons.
 
-### Simple Button
+## Numeric Label
 
-A button will automatically be styled by the variant in the theme configuration for button.
+A side by side button alongside a `NavLink` to another location.
 
-This button: 
+<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Flex sx={{ border: '1px solid', borderColor: 'primary', width: 'fit-content', borderRadius: 3, cursor: 'pointer' }}>
+  <Flex sx={{placeItems: 'center'}}>
+    <Button sx={{display: 'flex', alignItems: 'center', borderTopRightRadius: 0, borderBottomRightRadius: 0}}>
+      <svg sx={{ mr: 1 }} viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      Like
+    </Button>
+  </Flex>
+  <Flex sx={{ placeItems: 'center' }}>
+    <NavLink sx={{ borderRadius: '3' }}>
+      2459
+    </NavLink>
+  </Flex>
+</Flex>`}</LiveCode>
 
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button>Primary</Button>`}</LiveCode>
 
-Is the same as this with a theme file containing this variant defined:
 
-```
-theme: {
-  buttons: {
-    primary: {
-      color: "background",
-      bg: "primary",
-    },
-  }
-}
-```
-
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button variant="buttons.primary">Primary</Button>`}</LiveCode>
-
-### Using other variants
-
-You can use other variants that are defined by referencing them explicitly:
-
-```
-theme: {
-  buttons: {
-    primary: {
-      ...
-    },
-    secondary: {
-      variant: "buttons.primary",
-      color: "background",
-      bg: "secondary",
-    },
-    ghost: {
-      color: "text",
-      bg: alpha("primary", 0.1),
-      "&:hover": {
-        bg: alpha("primary", 0.2),
-      },
-    },
-  }
-}
-```
-
-With the above theme configuration you can then reference them:
-
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button variant="buttons.secondary">Secondary</Button>
-<Button variant="buttons.ghost">Ghost</Button>`}</LiveCode>
-
-### Rounded Buttons
-
-Using the sx prop, you can override specific styles that are being applied from the theme configuration.
-
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button sx={{ borderRadius: '0' }}>Primary</Button>
-<Button sx={{ borderRadius: '1' }}>Primary</Button>
-<Button sx={{ borderRadius: '2' }}>Primary</Button>
-<Button sx={{ borderRadius: '3' }}>Primary</Button>`}</LiveCode>
-
-You can pass in the value of an index instead to pull the value from an array in the theme configuration:
-
-```
-theme: {
-  radii: [0, 2, 4, 8],
-}
-```
-
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button sx={{ borderRadius: '0' }}>Primary</Button>
-<Button sx={{ borderRadius: '1' }}>Primary</Button>
-<Button sx={{ borderRadius: '2' }}>Primary</Button>
-<Button sx={{ borderRadius: '3' }}>Primary</Button>`}</LiveCode>
-
-### Colored Buttons
-
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button sx={{ backgroundColor: 'primary' }}>Primary</Button>
-<Button sx={{ backgroundColor: 'secondary' }}>Secondary</Button>`}</LiveCode>
-
-### Icon Buttons
+## Icon Button
 
 Theme UI includes an `IconButton` component.
 
 <LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<IconButton
   aria-label='Toggle dark mode'>
-  <svg sx={{ height: '14px', width: '14px'}} viewBox="0 0 20 20">
+  <svg sx={{ fill: 'text', height: '14px', width: '14px'}} viewBox="0 0 20 20">
     <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
   </svg>
 </IconButton>`}</LiveCode>
 
-### Nesting icons in Buttons
+## Labeled Buttons
 
 SVG elements can be used inside other elements and styled with the `sx` prop as well.
 
 <LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button>
-  <svg sx={{ height: '14px', width: '14px', fill: 'white' }} viewBox="0 0 20 20">
+  <svg sx={{ height: '14px', width: '14px', fill: 'background', marginRight: 1 }} viewBox="0 0 20 20">
     <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
   </svg>
   Download
 </Button>`}</LiveCode>
-
-### Elevated Button
-
-<LiveCode containerSx={`sx={{display: 'flex', justifyContent: 'space-around' }}`}>{`<Button sx={{ bg: 'white', color: 'text', borderWidth: '1px', borderStyle: 'solid', borderColor: '#d0d0d0', boxShadow: '0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)' }}>
-  Primary
-</Button>`}</LiveCode>
-
