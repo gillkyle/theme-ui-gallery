@@ -52,8 +52,10 @@ const NavLink = ({ children, to, ...props }) => {
       sx={{
         display: `flex`,
         alignItems: `center`,
-        color: parsedPath.pathname.includes(to) ? `primary` : `text`,
-        fontWeight: parsedPath.pathname.includes(to) ? `bold` : `regular`,
+        color:
+          parsedPath && parsedPath.pathname.includes(to) ? `primary` : `text`,
+        fontWeight:
+          parsedPath && parsedPath.pathname.includes(to) ? `bold` : `regular`,
         textDecoration: `none`,
         px: `3`,
         py: `2`,
