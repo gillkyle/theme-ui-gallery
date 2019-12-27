@@ -8,13 +8,28 @@ export default () => (
     viewBox="0 0 42 38"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    sx={{ mr: 1 }}
   >
-    <rect y="9" width="24" height="10" rx="3" fill="#CBD5E0" />
-    <rect x="18" y="18" width="24" height="10" rx="3" fill="#E9EDF1" />
+    <rect y="9" width="24" height="10" rx="3" sx={{ fill: `grayPrimary` }} />
+    <rect
+      x="18"
+      y="18"
+      width="24"
+      height="10"
+      rx="3"
+      sx={{ fill: `grayPrimary` }}
+    />
     <g filter="url(#filter0_d)">
-      <rect x="5" y="2" width="32" height="32" rx="6" fill="white" />
+      <rect
+        x="5"
+        y="2"
+        width="32"
+        height="32"
+        rx="6"
+        sx={{ fill: `background` }}
+      />
     </g>
-    <rect x="9" y="6" width="24" height="24" rx="4" fill="#303A4B" />
+    <rect x="9" y="6" width="24" height="24" rx="4" sx={{ fill: `primary` }} />
     <defs>
       <filter
         id="filter0_d"

@@ -35,8 +35,8 @@ export default {
     text: "#102A43", // neutrals.0
     background: "#ffffff",
     soft: "#f2f5f9",
-    grayPrimary: "#334E68", // neutrals.2
-    graySecondary: "#9FB3C8", // neutrals.6
+    grayPrimary: "#9fa4a9", // neutrals.2
+    graySecondary: "#aab3bb", // neutrals.6
     // neutrals: [
     //   "#102A43",
     //   "#243B53",
@@ -60,8 +60,8 @@ export default {
         accent: "#cc00ff",
         soft: "#121519",
         border: "#272727",
-        grayPrimary: "#9FB3C8", // neutrals.2
-        graySecondary: "#334E68", // neutrals.6
+        grayPrimary: "#c2d3e4",
+        graySecondary: "#969a9e",
       },
       deep: {
         text: "hsl(210, 50%, 96%)",
@@ -72,11 +72,11 @@ export default {
         gray: "hsl(210, 50%, 60%)",
         soft: "#1e202d",
         border: "#554E68",
-        grayPrimary: "#9FB3C8", // neutrals.2
-        graySecondary: "#334E68", // neutrals.6
+        grayPrimary: "#c2d3e4",
+        graySecondary: "#969a9e",
       },
       swiss: {
-        text: "hsl(10, 20%, 20%)",
+        text: "#3e4652",
         background: "#fffbf7",
         primary: "hsl(10, 80%, 50%)",
         secondary: "hsl(10, 60%, 50%)",
@@ -84,8 +84,8 @@ export default {
         gray: "hsl(10, 20%, 50%)",
         soft: "#fdf9f3",
         border: "#FEF3D8",
-        grayPrimary: "#334E68", // neutrals.2
-        graySecondary: "#9FB3C8", // neutrals.6
+        grayPrimary: "#9fa4a9", // neutrals.2
+        graySecondary: "#aab3bb", // neutrals.6
       },
     },
   },

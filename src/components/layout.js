@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx, Styled, useColorMode } from "theme-ui"
 import React from "react"
-import { Link } from "gatsby"
+import { Link, parsePath } from "gatsby"
 import { Global } from "@emotion/core"
 import { Button, Flex, Box, Heading } from "@theme-ui/components"
+import { FiAlertCircle, FiAirplay, FiCompass, FiGithub } from "react-icons/fi"
 import {
   Fonts,
   FontWeights,
@@ -28,24 +29,38 @@ const StyledRow = ({ children, title }) => (
   </>
 )
 
-const NavLink = ({ children, ...props }) => (
-  <Link
-    {...props}
-    sx={{
-      color: `text`,
-      textDecoration: `none`,
-      px: `3`,
-      py: `2`,
-      transition: `0.25ms all ease-in-out`,
-      borderRadius: `2`,
-      "&:hover": {
-        bg: `soft`,
-      },
-    }}
-  >
-    {children}
-  </Link>
-)
+const NavLink = ({ children, to, ...props }) => {
+  let parsedPath
+  if (typeof window !== `undefined`) {
+    parsedPath = parsePath(window.location.pathname)
+  }
+
+  return (
+    <Link
+      to={to}
+      {...props}
+      activeStyle={{
+        color: `primary`,
+      }}
+      sx={{
+        display: `flex`,
+        alignItems: `center`,
+        color: parsedPath.pathname.includes(to) ? `primary` : `text`,
+        fontWeight: parsedPath.pathname.includes(to) ? `bold` : `regular`,
+        textDecoration: `none`,
+        px: `3`,
+        py: `2`,
+        transition: `0.25ms all ease-in-out`,
+        borderRadius: `2`,
+        "&:hover": {
+          bg: `soft`,
+        },
+      }}
+    >
+      {children}
+    </Link>
+  )
+}
 
 const modes = ["light", "dark", "deep", "swiss"]
 
@@ -64,7 +79,9 @@ export default ({ children }) => {
         styles={{
           "*": {
             boxSizing: "border-box",
-            transition: "0.15s all ease-in-out",
+            transitionProperty: `background-color, background, margin, padding, line-height, font-size`,
+            transitionTimingFunction: `ease-in-out`,
+            transitionDuration: `0.15ms`,
           },
           body: {
             margin: 0,
@@ -105,7 +122,14 @@ export default ({ children }) => {
               Theme UI Gallery
             </Link>
           </Flex>
-          <Flex>Github</Flex>
+          <Flex>
+            <a
+              sx={{ variant: `links.nav` }}
+              href="https://github.com/gillkyle/theme-ui-gallery"
+            >
+              <FiGithub />
+            </a>
+          </Flex>
         </Flex>
         <div
           sx={{
@@ -127,9 +151,18 @@ export default ({ children }) => {
               },
             }}
           >
-            <NavLink to="alerts">Alerts</NavLink>
-            <NavLink to="buttons">Buttons</NavLink>
-            <NavLink to="navigation">Navigation</NavLink>
+            <NavLink to="alerts">
+              <FiAlertCircle sx={{ mr: `1` }} />
+              Alerts
+            </NavLink>
+            <NavLink to="buttons">
+              <FiAirplay sx={{ mr: `1` }} />
+              Buttons
+            </NavLink>
+            <NavLink to="navigation">
+              <FiCompass sx={{ mr: `1` }} />
+              Navigation
+            </NavLink>
           </Box>
           <Box
             sx={{
