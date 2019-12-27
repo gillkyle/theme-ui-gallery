@@ -58,22 +58,34 @@ export default {
         secondary: "#ee00ff",
         gray: "#999999",
         accent: "#cc00ff",
+        soft: "#121519",
+        border: "#272727",
+        grayPrimary: "#9FB3C8", // neutrals.2
+        graySecondary: "#334E68", // neutrals.6
       },
       deep: {
         text: "hsl(210, 50%, 96%)",
-        background: "hsl(230, 25%, 18%)",
+        background: "#101323",
         primary: "hsl(260, 100%, 80%)",
         secondary: "hsl(290, 100%, 80%)",
         accent: "hsl(290, 100%, 80%)",
         gray: "hsl(210, 50%, 60%)",
+        soft: "#1e202d",
+        border: "#554E68",
+        grayPrimary: "#9FB3C8", // neutrals.2
+        graySecondary: "#334E68", // neutrals.6
       },
       swiss: {
         text: "hsl(10, 20%, 20%)",
-        background: "hsl(10, 10%, 98%)",
+        background: "#fffbf7",
         primary: "hsl(10, 80%, 50%)",
         secondary: "hsl(10, 60%, 50%)",
         accent: "hsl(250, 60%, 30%)",
         gray: "hsl(10, 20%, 50%)",
+        soft: "#fdf9f3",
+        border: "#FEF3D8",
+        grayPrimary: "#334E68", // neutrals.2
+        graySecondary: "#9FB3C8", // neutrals.6
       },
     },
   },
@@ -105,8 +117,8 @@ export default {
     },
     display: {
       variant: "text.heading",
-      fontSize: [5, 6],
-      fontWeight: "display",
+      fontSize: [32, 36],
+      fontWeight: "heading",
       letterSpacing: "-0.03em",
       mt: 3,
     },
@@ -242,11 +254,11 @@ export default {
     },
     h2: {
       variant: "text.heading",
-      fontSize: 5,
+      fontSize: 4,
     },
     h3: {
       variant: "text.heading",
-      fontSize: 4,
+      fontSize: 3,
     },
     h4: {
       variant: "text.heading",
@@ -271,7 +283,7 @@ export default {
       fontSize: 1,
       color: `background`,
       p: 3,
-      bg: "grayPrimary",
+      bg: "#334E68",
       overflow: "auto",
       code: {
         color: "inherit",
@@ -283,7 +295,7 @@ export default {
       fontFamily: "monospace",
       fontSize: 1,
       ...nightOwl,
-      bg: "grayPrimary",
+      bg: "#334E68",
     },
     inlineCode: {
       fontFamily: "monospace",

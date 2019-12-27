@@ -2,6 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from "react-live"
 import * as components from "@theme-ui/components"
+import Logo from "../components/logo"
 
 const scope = {
   jsx,
@@ -11,6 +12,7 @@ const scope = {
       return <span className={props.activeClassName} {...props} />
     return <span {...props} sx={{ cursor: "pointer" }} />
   },
+  Logo,
   ...components,
 }
 

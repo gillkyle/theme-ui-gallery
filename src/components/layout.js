@@ -5,8 +5,6 @@ import { Link } from "gatsby"
 import { Global } from "@emotion/core"
 import { Button, Flex, Box, Heading } from "@theme-ui/components"
 import {
-  ColorPalette,
-  ColorPicker,
   Fonts,
   FontWeights,
   LineHeights,
@@ -15,18 +13,16 @@ import {
   Space,
   Editor,
   Row,
-  StylesForm,
-  SxMargin,
-  SxPadding,
-  SxColors,
-  SxTypography,
 } from "@theme-ui/editor"
 import SkipLink from "./skip-link"
+import Logo from "./logo"
 
 const StyledRow = ({ children, title }) => (
   <>
     <Row sx={{ mt: `3`, mb: `1` }}>
-      <b sx={{ fontSize: `2`, letterSpacing: 1, color: `gray` }}>{title}</b>
+      <b sx={{ fontSize: `2`, letterSpacing: 1, color: `grayPrimary` }}>
+        {title}
+      </b>
     </Row>
     <Row sx={{ mb: `3` }}>{children}</Row>
   </>
@@ -68,6 +64,7 @@ export default ({ children }) => {
         styles={{
           "*": {
             boxSizing: "border-box",
+            transition: "0.15s all ease-in-out",
           },
           body: {
             margin: 0,
@@ -92,23 +89,23 @@ export default ({ children }) => {
           }}
         >
           <Flex sx={{ alignItems: "center" }}>
-            <Link to="/" sx={{ variant: "links.nav", fontSize: `3` }}>
+            <Link
+              to="/"
+              sx={{
+                variant: "links.nav",
+                "&:hover": {
+                  bg: "transparent",
+                },
+                fontSize: `3`,
+                display: `flex`,
+                alignItems: `center`,
+              }}
+            >
+              <Logo />
               Theme UI Gallery
             </Link>
           </Flex>
-          <Flex>
-            <Button
-              sx={{
-                variant: "buttons.ghost",
-                py: `1`,
-                px: `2`,
-                fontSize: `1`,
-              }}
-              onClick={cycleMode}
-            >
-              {mode}
-            </Button>
-          </Flex>
+          <Flex>Github</Flex>
         </Flex>
         <div
           sx={{
@@ -163,10 +160,18 @@ export default ({ children }) => {
                 fontSize={12}
                 sx={{
                   "& * > label": {
-                    color: `grays.6`,
+                    color: `graySecondary`,
+                  },
+                  "& * > label[for='color-mode']": {
+                    display: `none`,
                   },
                   "& * > input": {
                     color: `text`,
+                    bg: `background`,
+                  },
+                  "& * > select": {
+                    color: `text`,
+                    bg: `background`,
                   },
                   "& *": {
                     borderRadius: `2`,
@@ -190,15 +195,19 @@ export default ({ children }) => {
                 <StyledRow title="Line Heights">
                   <LineHeights />
                 </StyledRow>
-                <Row sx={{ mt: `3`, mb: `1` }}>
-                  <b sx={{ fontSize: `2`, letterSpacing: 1 }}>Colors</b>
-                </Row>
-                <ColorMode />
-                <ColorPalette
-                  size={32}
-                  label={false}
-                  sx={{ border: theme => `1px solid ${theme.colors.border}` }}
-                />
+                <StyledRow title="Color Mode">
+                  <Button
+                    sx={{
+                      py: `1`,
+                      px: `2`,
+                      fontSize: `1`,
+                    }}
+                    onClick={cycleMode}
+                  >
+                    Cycle Colors
+                  </Button>
+                  <ColorMode />
+                </StyledRow>
                 <StyledRow title="Space">
                   <Space />
                 </StyledRow>

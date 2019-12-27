@@ -4,7 +4,13 @@ title: Navigation
 
 import { LiveCode } from "../components/code"
 
+# Navigation
+
+Examples of combining `@theme-ui/components` to create and style navigation structures.
+
 ## Horizontal Navigation
+
+Navigation style menus that run left to right, generally in the header or nav at the top of a page.
 
 ### Simple
 
@@ -26,13 +32,13 @@ import { LiveCode } from "../components/code"
 
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '100%' }}>
-  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderTopRightRadius: '0', borderBottomRightRadius: '0' }}>
+  <NavLink href="#!" sx={{ border: '1px solid', borderColor: 'border', textAlign: 'center', borderTopRightRadius: '0', borderBottomRightRadius: '0' }}>
     Account
   </NavLink>
-  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: '0' }}>
+  <NavLink href="#!" sx={{ border: '1px solid', borderColor: 'border', textAlign: 'center', borderRadius: '0' }}>
     Notifications
   </NavLink>
-  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderTopLeftRadius: '0', borderBottomLeftRadius: '0' }}>
+  <NavLink href="#!" sx={{ border: '1px solid', borderColor: 'border', textAlign: 'center', borderTopLeftRadius: '0', borderBottomLeftRadius: '0' }}>
     Settings
   </NavLink>
 </Flex>`}
@@ -42,19 +48,21 @@ import { LiveCode } from "../components/code"
 
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '100%' }}>
-  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: 0,  borderTopLeftRadius: 50, borderBottomLeftRadius: 50  }}>
+  <NavLink href="#!" sx={{ border: '1px solid', borderColor: 'border', textAlign: 'center', borderRadius: 0,  borderTopLeftRadius: 50, borderBottomLeftRadius: 50  }}>
     Account
   </NavLink>
-  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: '0' }}>
+  <NavLink href="#!" sx={{ border: '1px solid', borderColor: 'border', textAlign: 'center', borderRadius: '0' }}>
     Notifications
   </NavLink>
-  <NavLink href="#!" sx={{ border: '1px solid #dadcde', textAlign: 'center', borderRadius: 0, borderTopRightRadius: 50, borderBottomRightRadius: 50 }}>
+  <NavLink href="#!" sx={{ border: '1px solid', borderColor: 'border', textAlign: 'center', borderRadius: 0, borderTopRightRadius: 50, borderBottomRightRadius: 50 }}>
     Settings
   </NavLink>
 </Flex>`}
 </LiveCode>
 
 ## Vertical Navigation
+
+Navigation style menus that run top to bottom, generally in a sidebar on a page.
 
 ### Rounded Pills
 
