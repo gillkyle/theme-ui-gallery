@@ -4,7 +4,7 @@
     <img alt="Theme UI Gallery logo" src="https://raw.githubusercontent.com/gillkyle/images/master/theme-ui-gallery.png" width="320" />
   </a>
 </p>
-<span align="center">
+<p align="center">
   Copy and paste-able component structures pre-styled to match your theme.
-</span>
+</p>
 
