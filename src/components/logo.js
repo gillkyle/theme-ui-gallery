@@ -1,14 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-export default () => (
+export default ({ ...props }) => (
   <svg
     width="42"
     height="38"
     viewBox="0 0 42 38"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ mr: 1 }}
+    sx={{ mr: 1, minWidth: 40 }}
+    {...props}
   >
     <rect y="9" width="24" height="10" rx="3" sx={{ fill: `grayPrimary` }} />
     <rect

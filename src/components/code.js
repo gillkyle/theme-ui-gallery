@@ -4,6 +4,11 @@ import { LiveProvider, LiveEditor, LivePreview, LiveError } from "react-live"
 import * as components from "@theme-ui/components"
 import Logo from "../components/logo"
 
+const images = {
+  beach:
+    "https://images.unsplash.com/photo-1495954484750-af469f2f9be5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+}
+
 const scope = {
   jsx,
   Styled,
@@ -13,6 +18,7 @@ const scope = {
     return <span {...props} sx={{ cursor: "pointer" }} />
   },
   Logo,
+  ...images,
   ...components,
 }
 

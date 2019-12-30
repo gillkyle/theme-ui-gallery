@@ -8,26 +8,32 @@ import { LiveCode } from "../components/code"
 
 Examples of combining `@theme-ui/components` to create and style cards.
 
-### With Close
+## Vertical Stack
 
-Including Theme UI component's `Close` component at the end of the alert.
+Vertical stacked card content.
 
-<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert>
-  This is a notice <Close ml='auto' mr={-2} />
-</Alert>`}</LiveCode>
+<LiveCode containerSx={`sx={{display: 'grid', maxWidth: '420px', margin: '0 auto', p: '3' }}`}>{`<Card sx={{ borderRadius: '3', boxShadow: '0 8px 16px -4px rgba(0,0,0,.1), 0 0 8px -3px rgba(0,0,0,.1)', }}>
+  <Image src={beach} sx={{ borderTopLeftRadius: '3', borderTopRightRadius: '3' }} />
+  <Box sx={{ p: '3' }}>
+    <Heading as='h2' mb={2} >The Beach Front</Heading>
+    <Text mb={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
+    <Flex>
+      <Badge mr={1}>summer</Badge><Badge mr={1}>photography</Badge><Badge mr={1}>travel</Badge>
+    </Flex>
+  </Box>
+</Card>`}</LiveCode>
 
-### Rounded with Badge
+## Horizontal Stack
 
-Nesting a `Badge` inside of an `Alert`.
+Left aligned content in a wider displyed card.
 
-<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert sx={{ borderRadius: '3' }}>
-  <Badge bg="secondary" mr={2} borderRadius="3px">New!</Badge>There's a big deal that ends soon!
-</Alert>`}</LiveCode>
-
-### Outline
-
-Adjusting styles to create an outline rather than a filled in `Alert`.
-
-<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert sx={{ border: '1px solid', borderColor: 'primary', bg: 'background', color: 'primary'}}>
-  Verify your account to see additional information
-</Alert>`}</LiveCode>
+<LiveCode containerSx={`sx={{display: 'grid', margin: '0 auto', maxWidth: '560px', p: '3' }}`}>{`<Card sx={{ borderRadius: '3', display: 'grid', gridTemplateColumns: '1fr 2fr',  border: '1px solid', borderColor: 'border', boxShadow: '0 8px 16px -4px rgba(0,0,0,.1)' }}>
+  <Image src={beach} sx={{ height: '100%', objectFit: 'cover', borderTopLeftRadius: '3', borderBottomLeftRadius: '3' }}/>
+  <Box sx={{ p: '3' }}>
+    <Heading as='h2' mb={2} >The Beach Front</Heading>
+    <Text mb={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
+    <Flex>
+      <Badge mr={1}>summer</Badge><Badge mr={1}>photography</Badge><Badge mr={1}>travel</Badge>
+    </Flex>
+  </Box>
+</Card>`}</LiveCode>

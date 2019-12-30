@@ -8,27 +8,56 @@ import { LiveCode } from "../components/code"
 
 Examples of combining `@theme-ui/components` to create and style navigation structures.
 
+## Menu Bar
+
+A typical menu navigation you'd see on the top of a site
+
+<LiveCode>
+  {`<Flex as="nav" sx={{justifyContent: 'space-between'}}>
+  <Flex sx={{ alignItems: 'center' }}>
+    <div>
+      <NavLink href="#!" sx={{ p: '2', display: 'flex', flexDirection: 'row', alignItems: 'center', fontSize: '2'}}>
+        <Logo sx={{ minWidth: 40 }}/> Gallery
+      </NavLink>
+    </div>
+    <NavLink href="#!" p={2}>
+      Docs
+    </NavLink>
+    <NavLink href="#!" p={2}>
+      Blog
+    </NavLink>
+  </Flex>
+  <Box sx={{ display: 'flex', placeItems: 'center' }}>
+    <Button py={1}>Get Started</Button>
+  </Box>
+</Flex>`}
+</LiveCode>
+
 ## Horizontal Navigation
 
 Navigation style menus that run left to right, generally in the header or nav at the top of a page.
 
 ### Simple
 
-<LiveCode>
-  {`<Flex as="nav" sx={{ width: '100%' }}>
-  <NavLink href="#!" p={2}>
-    Home
-  </NavLink>
-  <NavLink href="#!" p={2}>
-    Blog
-  </NavLink>
-  <NavLink href="#!" p={2}>
-    About
-  </NavLink>
+Horizontal list displayed from left to right.
+
+<LiveCode containerSx={`sx={{width: '50%'}}`}>
+  {`<Flex as="nav">
+    <NavLink href="#!" p={2}>
+      Home
+    </NavLink>
+    <NavLink href="#!" p={2}>
+      Blog
+    </NavLink>
+    <NavLink href="#!" p={2}>
+      About
+    </NavLink>
 </Flex>`}
 </LiveCode>
 
-### Contained
+### Contained Link Group
+
+A link group wrapped by a border.
 
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '100%' }}>
@@ -45,6 +74,8 @@ Navigation style menus that run left to right, generally in the header or nav at
 </LiveCode>
 
 ### Contained Full-rounded
+
+Navigation links with a border and rounded edges displayed horizontally.
 
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '100%' }}>
@@ -66,6 +97,8 @@ Navigation style menus that run top to bottom, generally in a sidebar on a page.
 
 ### Rounded Pills
 
+Simple round pills stacked vertically.
+
 <LiveCode>
   {`<Flex as="nav" sx={{ width: '50%', flexDirection: 'column' }}>
   <NavLink href="#!" sx={{ p: 2, borderRadius: '2'}}>
@@ -80,11 +113,13 @@ Navigation style menus that run top to bottom, generally in a sidebar on a page.
 </Flex>`}
 </LiveCode>
 
-### Square Pills
+### Pills with Active Right border
+
+Active element styled as a right border to show location in the site.
 
 <LiveCode>
-  {`<Flex as="nav" sx={{ width: '50%', flexDirection: 'column' }}>
-  <NavLink href="#!" sx={{ p: 2, borderRadius: '0'}}>
+  {`<Flex as="nav" sx={{ width: '50%', flexDirection: 'column', borderRight: '1px solid', borderColor: 'border' }}>
+  <NavLink href="#!" sx={{ p: 2, borderRadius: '0', borderRight: '3px solid', borderColor: 'primary', color: 'primary' }}>
     Home
   </NavLink>
   <NavLink href="#!" sx={{ p: 2, borderRadius: '0'}}>
