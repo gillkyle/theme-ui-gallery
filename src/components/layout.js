@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled, useColorMode } from "theme-ui"
 import React from "react"
+import { Helmet } from "react-helmet"
 import { Link, parsePath } from "gatsby"
 import { Global } from "@emotion/core"
 import { Button, Divider, Flex, Box, Heading, Text } from "@theme-ui/components"
