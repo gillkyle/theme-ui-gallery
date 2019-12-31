@@ -8,5 +8,6 @@ module.exports = {
       },
     },
     "gatsby-theme-style-guide",
+    "gatsby-plugin-react-helmet",
   ],
 }

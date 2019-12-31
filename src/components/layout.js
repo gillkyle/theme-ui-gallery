@@ -108,6 +108,17 @@ export default ({ children }) => {
           },
         }}
       />
+      <Helmet>
+        <title>Theme UI Gallery</title>
+        <meta
+          name="description"
+          content="Copy and paste-able component structures pre-styled to match your theme"
+        />
+        <meta
+          property="og:image"
+          content="https://repository-images.githubusercontent.com/229687702/bb68c000-2b4a-11ea-9479-2b99236c15a9"
+        />
+      </Helmet>
       <SkipLink>Skip to content</SkipLink>
       <Flex
         sx={{
@@ -181,10 +192,6 @@ export default ({ children }) => {
             }}
           >
             <div>
-              <NavLink to="alerts">
-                <FiAlertCircle sx={{ mr: `1` }} />
-                Alerts
-              </NavLink>
               <NavLink to="buttons">
                 <FiAirplay sx={{ mr: `1` }} />
                 Buttons
@@ -196,6 +203,10 @@ export default ({ children }) => {
               <NavLink to="navigation">
                 <FiCompass sx={{ mr: `1` }} />
                 Navigation
+              </NavLink>
+              <NavLink to="notices">
+                <FiAlertCircle sx={{ mr: `1` }} />
+                Notices
               </NavLink>
               <Divider />
               <NavLink
@@ -261,14 +272,15 @@ export default ({ children }) => {
                   "& * > input": {
                     color: `text`,
                     bg: `background`,
+                    borderColor: `border`,
                   },
                   "& * > select": {
                     color: `text`,
                     bg: `background`,
+                    borderColor: `border`,
                   },
                   "& *": {
                     borderRadius: `2`,
-                    borderColor: `border`,
                   },
                 }}
               >
@@ -311,6 +323,7 @@ export default ({ children }) => {
                     sx={{
                       fontSize: `2`,
                       letterSpacing: 1,
+                      color: `grayPrimary`,
                     }}
                   >
                     Space

@@ -35,7 +35,7 @@ export default {
     text: "#102A43", // neutrals.0
     background: "#ffffff",
     soft: "#f3f7f9",
-    border: "#EDF2F7",
+    border: "#DDE2E7",
     grayPrimary: "#9fa4a9", // neutrals.2
     graySecondary: "#aab3bb", // neutrals.6
     translucent: "rgba(35,116,175,0.35)",
@@ -94,8 +94,8 @@ export default {
   fontSizes: [12, 14, 16, 20, 24, 36],
   fontWeights: {
     regular: 400,
-    bold: 700,
-    heading: 800,
+    bold: 600,
+    heading: 700,
   },
   lineHeights: {
     body: 1.5,
@@ -159,13 +159,15 @@ export default {
       textDecoration: "none",
       fontWeight: "bold",
       fontSize: 2,
-      p: 3,
+      px: 3,
+      py: 2,
       color: "background",
-      bg: "text",
+      bg: "primary",
       borderRadius: 6,
+      cursor: "pointer",
       "&:hover, &:focus": {
         color: "background",
-        bg: "primary",
+        bg: alpha("primary", 0.8),
       },
     },
     nav: {

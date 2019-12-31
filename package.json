@@ -24,10 +24,12 @@
     "@theme-ui/prism": "^0.2.50",
     "gatsby": "^2.18.12",
     "gatsby-plugin-mdx": "^1.0.64",
+    "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-theme-ui": "^0.2.53",
     "gatsby-theme-style-guide": "^0.2.53",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
     "react-icons": "^3.8.0",
     "react-live": "^2.2.2",
     "theme-ui": "^0.2.52"
