@@ -8,3 +8,6 @@
   Copy and paste-able component structures pre-styled to match your theme.
 </p>
 
+<hr />
+
+<img src="https://github.com/gillkyle/images/blob/master/theme-ui-gallery.gif" />
