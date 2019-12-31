@@ -8,11 +8,13 @@ import { LiveCode } from "../components/code"
 
 Examples of combining `@theme-ui/components` to create and style alerts.
 
+---
+
 ### With Close
 
 Including Theme UI component's `Close` component at the end of the alert.
 
-<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert>
+<LiveCode backgroundColor="soft" containerSx={`sx={{display: 'grid' }}`}>{`<Alert>
   This is a notice <Close ml='auto' mr={-2} />
 </Alert>`}</LiveCode>
 
@@ -20,7 +22,7 @@ Including Theme UI component's `Close` component at the end of the alert.
 
 Nesting a `Badge` inside of an `Alert`.
 
-<LiveCode containerSx={`sx={{display: 'grid' }}`}>{`<Alert sx={{ borderRadius: '3' }}>
+<LiveCode backgroundColor="soft" containerSx={`sx={{display: 'grid' }}`}>{`<Alert sx={{ borderRadius: '3' }}>
   <Badge bg="secondary" mr={2} borderRadius="3px">New!</Badge>There's a big deal that ends soon!
 </Alert>`}</LiveCode>
 

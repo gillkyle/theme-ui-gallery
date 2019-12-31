@@ -8,6 +8,8 @@ import { LiveCode } from "../components/code"
 
 Examples of combining `@theme-ui/components` to create and style navigation structures.
 
+---
+
 ## Menu Bar
 
 A typical menu navigation you'd see on the top of a site
@@ -43,15 +45,15 @@ Horizontal list displayed from left to right.
 
 <LiveCode containerSx={`sx={{width: '50%'}}`}>
   {`<Flex as="nav">
-    <NavLink href="#!" p={2}>
-      Home
-    </NavLink>
-    <NavLink href="#!" p={2}>
-      Blog
-    </NavLink>
-    <NavLink href="#!" p={2}>
-      About
-    </NavLink>
+  <NavLink href="#!" p={2}>
+    Home
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    Blog
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    About
+  </NavLink>
 </Flex>`}
 </LiveCode>
 

@@ -38,6 +38,7 @@ export default {
     border: "#EDF2F7",
     grayPrimary: "#9fa4a9", // neutrals.2
     graySecondary: "#aab3bb", // neutrals.6
+    translucent: "rgba(35,116,175,0.35)",
     // neutrals: [
     //   "#102A43",
     //   "#243B53",
@@ -57,9 +58,10 @@ export default {
         primary: "#71abe6",
         secondary: "#dcb219",
         soft: "#121519",
-        border: "#272727",
+        border: "#373737",
         grayPrimary: "#687b8e",
         graySecondary: "#969a9e",
+        translucent: "rgba(49,148,220,0.35)",
       },
       swiss: {
         text: "#3e4652",
@@ -67,9 +69,10 @@ export default {
         primary: "hsl(10, 80%, 50%)",
         secondary: "hsl(10, 60%, 50%)",
         soft: "#fdf9f3",
-        border: "#FEF3D8",
+        border: "#f9e8d2",
         grayPrimary: "#687b8e", // neutrals.2
         graySecondary: "#aab3bb", // neutrals.6
+        translucent: "rgba(202,127,102,0.35)",
       },
       deep: {
         text: "hsl(210, 50%, 96%)",
@@ -80,6 +83,7 @@ export default {
         border: "#554E68",
         grayPrimary: "#c2d3e4",
         graySecondary: "#969a9e",
+        translucent: "rgba(184,81,222,0.35)",
       },
     },
   },
@@ -193,10 +197,11 @@ export default {
       fontWeight: "bold",
     },
     input: {
-      borderColor: "gray",
+      borderColor: "border",
+      boxShadow: "0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)",
       "&:focus": {
         borderColor: "primary",
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: theme => `0 0 0 3px rgba(35,116,175,0.35)`, // rgba(35,116,175,0.35)
         outline: "none",
       },
     },

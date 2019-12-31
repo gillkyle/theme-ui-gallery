@@ -131,7 +131,12 @@ const prismTheme = {
   ],
 }
 
-export const LiveCode = ({ children, preview, containerSx }) => {
+export const LiveCode = ({
+  children,
+  preview,
+  backgroundColor,
+  containerSx,
+}) => {
   if (preview) {
     return (
       <LiveProvider
@@ -155,7 +160,7 @@ export const LiveCode = ({ children, preview, containerSx }) => {
       <div
         sx={{
           p: 3,
-          bg: `background`,
+          bg: backgroundColor ? backgroundColor : `background`,
           borderColor: `#cbd5e0`,
           borderTopLeftRadius: `3`,
           borderTopRightRadius: `3`,

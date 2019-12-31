@@ -1,0 +1,37 @@
+---
+title: Forms
+---
+
+import { LiveCode } from "../components/code"
+
+# Forms
+
+Examples of combining `@theme-ui/components` to create and style forms.
+
+---
+
+## Login
+
+Username and Password stacked login.
+
+<LiveCode backgroundColor="soft" containerSx={`sx={{display: 'grid', maxWidth: '420px', margin: '0 auto', p: '3' }}`}>{`<Card as="form" onSubmit={e => e.preventDefault()} sx={{ bg: 'background', borderRadius: '3', boxShadow: '0 8px 16px -4px rgba(0,0,0,.1), 0 0 8px -3px rgba(0,0,0,.1)', }}>
+  <Box p={4}>
+    <Label htmlFor='username'>Username</Label>
+    <Input
+      name='username'
+      mb={3}
+    />
+    <Label htmlFor='password'>Password</Label>
+    <Input
+      type='password'
+      name='password'
+      mb={4}
+      placeholder="********"
+    />
+    <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+      <Button>Sign In</Button>
+      <Text sx={{ color: 'primary' }}>Forgot Password?</Text>
+    </Flex>
+  </Box>
+</Card>
+<Text sx={{ textAlign: 'center', fontSize: '0', color: 'text', opacity: 0.25, mt: '3'}}>© 2019. All Rights Reserved.</Text>`}</LiveCode>

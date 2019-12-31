@@ -3,7 +3,7 @@ import { jsx, Styled, useColorMode } from "theme-ui"
 import React from "react"
 import { Link, parsePath } from "gatsby"
 import { Global } from "@emotion/core"
-import { Button, Divider, Flex, Box, Heading } from "@theme-ui/components"
+import { Button, Divider, Flex, Box, Heading, Text } from "@theme-ui/components"
 import {
   FiAlertCircle,
   FiAirplay,
@@ -11,6 +11,7 @@ import {
   FiCompass,
   FiCopy,
   FiGithub,
+  FiTwitter,
 } from "react-icons/fi"
 import {
   Fonts,
@@ -90,7 +91,17 @@ export default ({ children }) => {
             boxSizing: "border-box",
             transitionProperty: `background-color, background, margin, padding, line-height, font-size`,
             transitionTimingFunction: `ease-in-out`,
-            transitionDuration: `0.15ms`,
+            transitionDuration: `0.3s`,
+          },
+          // hacky way to target divs in style guide theme
+          "#typography": {
+            "& > div > div > div > div": {
+              fontSize: 28,
+            },
+            code: {
+              backgroundColor: "transparent",
+              color: "inherit",
+            },
           },
           body: {
             margin: 0,
@@ -138,10 +149,13 @@ export default ({ children }) => {
               width: `fit-content`,
               display: `flex`,
               alignItems: `center`,
+              textTransform: `uppercase`,
+              fontWeight: `400`,
+              color: `grayPrimary`,
             }}
             href="https://github.com/gillkyle/theme-ui-gallery"
           >
-            Contribute
+            View Source
             <FiGithub sx={{ ml: 1 }} />
           </Flex>
         </Flex>
@@ -159,41 +173,56 @@ export default ({ children }) => {
               borderRight: theme => `1px solid ${theme.colors.border}`,
               display: `flex`,
               flexDirection: `column`,
+              justifyContent: `space-between`,
               height: `calc(100vh - 64px)`,
               "& *+*": {
                 mt: `1`,
               },
             }}
           >
-            <NavLink to="alerts">
-              <FiAlertCircle sx={{ mr: `1` }} />
-              Alerts
-            </NavLink>
-            <NavLink to="buttons">
-              <FiAirplay sx={{ mr: `1` }} />
-              Buttons
-            </NavLink>
-            <NavLink to="cards">
-              <FiCopy sx={{ mr: `1` }} />
-              Cards
-            </NavLink>
-            <NavLink to="navigation">
-              <FiCompass sx={{ mr: `1` }} />
-              Navigation
-            </NavLink>
-            <Divider />
-            <NavLink
-              to="style-guide"
-              sx={{
-                fontSize: 1,
-                "&::before": {
-                  borderTop: `1px solid red`,
-                },
-              }}
+            <div>
+              <NavLink to="alerts">
+                <FiAlertCircle sx={{ mr: `1` }} />
+                Alerts
+              </NavLink>
+              <NavLink to="buttons">
+                <FiAirplay sx={{ mr: `1` }} />
+                Buttons
+              </NavLink>
+              <NavLink to="cards">
+                <FiCopy sx={{ mr: `1` }} />
+                Cards
+              </NavLink>
+              <NavLink to="navigation">
+                <FiCompass sx={{ mr: `1` }} />
+                Navigation
+              </NavLink>
+              <Divider />
+              <NavLink
+                to="style-guide"
+                sx={{
+                  fontSize: 1,
+                  "&::before": {
+                    borderTop: `1px solid red`,
+                  },
+                }}
+              >
+                <FiBookOpen sx={{ mr: `1` }} />
+                View Theme
+              </NavLink>
+            </div>
+            <Text
+              sx={{ fontSize: `0`, color: `grayPrimary`, textAlign: `center` }}
             >
-              <FiBookOpen sx={{ mr: `1` }} />
-              View Theme
-            </NavLink>
+              Made by{" "}
+              <a
+                sx={{ textDecoration: `none` }}
+                href="https://twitter.com/gill_kyle"
+              >
+                @gill_kyle
+              </a>
+              <FiTwitter sx={{ ml: `1` }} size={8} />
+            </Text>
           </Box>
           <Box
             sx={{
@@ -239,9 +268,14 @@ export default ({ children }) => {
                   },
                   "& *": {
                     borderRadius: `2`,
+                    borderColor: `border`,
                   },
                 }}
               >
+                <Text sx={{ color: `grayPrimary` }}>
+                  Editing your theme will update all elements styled on the page
+                  by Theme UI.
+                </Text>
                 <StyledRow title="Fonts">
                   <Fonts
                     sx={{
@@ -272,9 +306,24 @@ export default ({ children }) => {
                   </Button>
                   <ColorMode />
                 </StyledRow>
-                <StyledRow title="Space">
+                <Row sx={{ mt: `3`, mb: `1` }}>
+                  <b
+                    sx={{
+                      fontSize: `2`,
+                      letterSpacing: 1,
+                    }}
+                  >
+                    Space
+                  </b>
+                </Row>
+                <Row sx={{ mb: 2 }}>
+                  <Text sx={{ color: `grayPrimary` }}>
+                    Space is used by margin, padding, and CSS grid gaps.
+                  </Text>
+                </Row>
+                <Row sx={{ mb: `3` }}>
                   <Space />
-                </StyledRow>
+                </Row>
               </Editor>
             </Box>
             <Box
@@ -286,9 +335,11 @@ export default ({ children }) => {
                 bottom: 0,
                 right: 0,
                 left: 0,
+                color: `grayPrimary`,
+                fontSize: `0`,
               }}
             >
-              Button
+              Edit the Theme to see changes!
             </Box>
           </Box>
         </div>
