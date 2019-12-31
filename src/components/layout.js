@@ -119,6 +119,16 @@ export default ({ children }) => {
           property="og:image"
           content="https://repository-images.githubusercontent.com/229687702/bb68c000-2b4a-11ea-9479-2b99236c15a9"
         />
+        <meta
+          name="twitter:image"
+          content="https://repository-images.githubusercontent.com/229687702/bb68c000-2b4a-11ea-9479-2b99236c15a9"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Theme UI Gallery" />
+        <meta
+          name="twitter:description"
+          content="Copy and paste-able component structures pre-styled to match your theme"
+        />
       </Helmet>
       <SkipLink>Skip to content</SkipLink>
       <Flex
