@@ -274,6 +274,7 @@ export default ({ children }) => {
               <Editor
                 fontSize={12}
                 sx={{
+                  marginBottom: '64px',
                   "& * > label": {
                     color: `graySecondary`,
                   },
